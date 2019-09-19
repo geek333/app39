@@ -10,6 +10,9 @@ import Router from './Routers'
 
 export default class RegForm extends React.Component {
 
+constructor(props) {
+    super(props);
+  }
   signIn()
   {
     Actions.login();
@@ -33,7 +36,8 @@ export default class RegForm extends React.Component {
               </TouchableOpacity>
 
               <TouchableOpacity style={styles.button}>
-                  <Text style={styles.btntext} onPress={this.signIn}>Sign In</Text>
+
+                  <Text style={styles.btntext} onPress={() => this.props.navigation.navigate('Login')}>Sign In</Text>
               </TouchableOpacity>
             </View>
           );

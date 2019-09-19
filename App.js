@@ -1,18 +1,41 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import '@expo/vector-icons';
+import {
+  createAppContainer
+} from 'react-navigation';
 
+import { createStackNavigator } from 'react-navigation-stack';
 
 import RegForm from './app/components/RegForm';
+import Login from './app/components/Login';
+import Routers from './app/components/Routers';
 
+const RootStack = createStackNavigator({
+  RegForm:{
+      screen: RegForm,
+  }, 
+  Login: {
+    screen: Login,
+  },
+  Routers: {
+    screen: Routers,
+  },
+},
+{
+    initialRouteName: 'RegForm',
+  }
+  )
 
+const App = createAppContainer(RootStack);
 
-export default class app extends React.Component {
+class app extends React.Component {
   render(){
-    return (
-      <View style={styles.container}>
-        <RegForm/>
-      </View>
-    );
+    return ( <App/>);
+    //   <View style={styles.container}>
+    //     <RegForm/>
+    //   </View>
+    // );
   }
   
 }
@@ -26,3 +49,5 @@ const styles = StyleSheet.create({
     padding:15,
   },
 });
+
+export default App;
