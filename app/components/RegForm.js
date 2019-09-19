@@ -3,13 +3,13 @@ import { StyleSheet,
     Text, 
     View,
     TextInput,
-    Button,
     TouchableOpacity, } from 'react-native';
 
 import {Actions} from 'react-native-router-flux';
 import Router from './Routers'
 
 export default class RegForm extends React.Component {
+
 constructor(props) {
     super(props);
   }
@@ -36,9 +36,9 @@ constructor(props) {
               </TouchableOpacity>
 
               <TouchableOpacity style={styles.button}>
+
                   <Text style={styles.btntext} onPress={() => this.props.navigation.navigate('Login')}>Sign In</Text>
               </TouchableOpacity>
-
             </View>
           );
     }
