@@ -3,14 +3,15 @@ import { StyleSheet,
     Text, 
     View,
     TextInput,
-    TouchableOpacity, } from 'react-native';
+    TouchableOpacity, 
+    Button} from 'react-native';
 
 export default class RegForm extends React.Component {
     render(){
 
         return (
             <View style={styles.RegForm}>
-               <Text style={styles.header}>Registration</Text>
+               <Text style={styles.header}>Login</Text>
                
                
                <TextInput style={styles.textinput} underlineColorAndroid={'transparent'} placeholder="Your Email" />
@@ -18,14 +19,15 @@ export default class RegForm extends React.Component {
                <TextInput style={styles.textinput} secureTextEntry={true} underlineColorAndroid={'transparent'} placeholder="Password" />
              
               <TouchableOpacity style={styles.button}>
-                  <Text style={styles.btntext}>Sign In</Text>
+                  <Text style={styles.btntext}>Login</Text>
               </TouchableOpacity>
 
 
               <View>
-                 <TouchableOpacity>
-                        <Text>Sign UP</Text>
-                 </TouchableOpacity>
+              <Button
+          title="Go to Details"
+          onPress={() => this.props.navigation.navigate('Details')}
+        />
               </View>
             </View>
           );

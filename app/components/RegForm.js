@@ -6,14 +6,11 @@ import { StyleSheet,
     TouchableOpacity, } from 'react-native';
 
 import {Actions} from 'react-native-router-flux';
-import Router from './Routers'
+
 
 export default class RegForm extends React.Component {
 
-  signIn()
-  {
-    Actions.login();
-  }
+ 
     render(){
 
         return (
@@ -33,7 +30,7 @@ export default class RegForm extends React.Component {
               </TouchableOpacity>
 
               <TouchableOpacity style={styles.button}>
-                  <Text style={styles.btntext} onPress={this.signIn}>Sign In</Text>
+                  <Text style={styles.btntext} onPress="">Sign In</Text>
               </TouchableOpacity>
             </View>
           );

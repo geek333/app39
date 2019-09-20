@@ -1,7 +1,7 @@
 import React from 'react';
-import {Video} from 'react-native-video';
+import Video from 'react-native-video'
 
-export class App extends React.Component() {
+export class Welcome extends React.Component() {
     render(){
 
         return (
@@ -16,6 +16,7 @@ export class App extends React.Component() {
             </View>
           );
     }
+ 
 }
 
 const styles = StyleSheet.create({
