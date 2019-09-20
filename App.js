@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import {Video} from 'react-native-video';
 
 export class App extends React.Component() {
@@ -16,6 +17,47 @@ export class App extends React.Component() {
             </View>
           );
     }
+=======
+import { StyleSheet, Text, View } from 'react-native';
+import '@expo/vector-icons';
+import {
+  createAppContainer
+} from 'react-navigation';
+
+import { createStackNavigator } from 'react-navigation-stack';
+
+import RegForm from './app/components/RegForm';
+import Login from './app/components/Login';
+import Routers from './app/components/Routers';
+
+const RootStack = createStackNavigator({
+  RegForm:{
+      screen: RegForm,
+  }, 
+  Login: {
+    screen: Login,
+  },
+  Routers: {
+    screen: Routers,
+  },
+},
+{
+    initialRouteName: 'RegForm',
+  }
+  )
+
+const App = createAppContainer(RootStack);
+
+class app extends React.Component {
+  render(){
+    return ( <App/>);
+    //   <View style={styles.container}>
+    //     <RegForm/>
+    //   </View>
+    // );
+  }
+  
+>>>>>>> 6c7f772345bc3bb319a21632bce3172f8a6ed7c1
 }
 
 const styles = StyleSheet.create({
@@ -33,3 +75,5 @@ const styles = StyleSheet.create({
     right: 0,
   },
 });
+
+export default App;
