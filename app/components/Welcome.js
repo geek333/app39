@@ -17,6 +17,7 @@ export class Welcome extends React.Component() {
           );
     }
  
+    
 }
 
 const styles = StyleSheet.create({
