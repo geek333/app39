@@ -9,13 +9,7 @@ import { StyleSheet,
     Alert,} from 'react-native';
 
 import {Actions} from 'react-native-router-flux';
-<<<<<<< HEAD
 
-
-export default class RegForm extends React.Component {
-
- 
-=======
 import Router from './Routers'
 import validation from './validation'
 import validate from './validation_wrapper'
@@ -64,6 +58,8 @@ constructor(props) {
         { cancelable: false }
       )
     }else{
+      AsyncStorage.setItem('EMAIL', email);
+      AsyncStorage.setItem('PASSWORD',password)
       this.props.navigation.navigate('Login')
     }
   }
@@ -72,7 +68,7 @@ constructor(props) {
   {
     Actions.login();
   }
->>>>>>> 6c7f772345bc3bb319a21632bce3172f8a6ed7c1
+
     render(){
 
         return (
@@ -98,15 +94,12 @@ constructor(props) {
                   <Text style={styles.btntext}>Sign Up</Text>
               </TouchableOpacity>
 
-<<<<<<< HEAD
-              <TouchableOpacity style={styles.button}>
-                  <Text style={styles.btntext} onPress="">Sign In</Text>
-=======
+
               <TouchableOpacity style={styles.button}
               onPress={() => this.props.navigation.navigate('Login')}>
 
                   <Text style={styles.btntext}>Sign In</Text>
->>>>>>> 6c7f772345bc3bb319a21632bce3172f8a6ed7c1
+
               </TouchableOpacity>
             </View>
           );
