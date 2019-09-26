@@ -4,17 +4,22 @@ import { StyleSheet,
     View,
     TextInput,
     TouchableOpacity, 
+    AsyncStorage,
+    Alert,
     Button} from 'react-native';
 
 export default class RegForm extends React.Component {
     render(){
 
+      const email = AsyncStorage.getItem('EMAIL');
+      console.log("email is")
+        console.log(email)
         return (
             <View style={styles.RegForm}>
                <Text style={styles.header}>Login</Text>
                
                
-               <TextInput style={styles.textinput} underlineColorAndroid={'transparent'} placeholder="Your Email" />
+               <TextInput style={styles.textinput} underlineColorAndroid={'transparent'} placeholder="Your Email" value={email}/>
              
                <TextInput style={styles.textinput} secureTextEntry={true} underlineColorAndroid={'transparent'} placeholder="Password" />
              
