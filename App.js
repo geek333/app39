@@ -39,7 +39,6 @@ class app extends React.Component {
     // );
   }
   
-
 }
 
 const styles = StyleSheet.create({
